@@ -13,7 +13,7 @@ include('../layout/superior.php');
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
+            <div class="row mb-1">
                 <div class="col-md-19">
                     <h1 class="m-0">Registro de Records
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"

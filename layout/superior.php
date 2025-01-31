@@ -206,30 +206,7 @@
                                 </ul>
                             </li>
                             <br>
-                            <!--menu_Facturar-->
-                            <li class="nav-item ">
-                                <a href="#" class="nav-link active">
-                                    <i class="fa-solid fa-money-check-dollar"></i>
-                                    <p>
-                                        Facturas
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?php echo $url ?>/pagesError/facturas.php" class="nav-link">
-                                            <i class="far fa-circle text-orange nav-icon"></i>
-                                            <p>Listado de Fatuas</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?php echo $url ?>/pagesError/facturas.php" class="nav-link">
-                                            <i class="far fa-circle text-orange nav-icon"></i>
-                                            <p>Nueva Factura</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+
 
                             <?php
                         }
@@ -279,30 +256,6 @@
                                 </ul>
                             </li>
                             <br>
-                            <li class="nav-item ">
-                                <a href="#" class="nav-link active">
-                                    <i class="fa-solid fa-money-check-dollar"></i>
-                                    <p>
-                                        Facturas
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?php echo $url ?>/pagesError/facturas.php" class="nav-link">
-                                            <i class="far fa-circle text-orange nav-icon"></i>
-                                            <p>Listado de Fatuas</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?php echo $url ?>/pagesError/facturas.php" class="nav-link">
-                                            <i class="far fa-circle text-orange nav-icon"></i>
-                                            <p>Nueva Factura</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
                             <?php
                         }
                         ?>

@@ -122,6 +122,12 @@ include('../layout/superior.php');
 
 <!--variables-->
 <script>
+    function formatearFecha(fecha) {
+        const anio = fecha.getFullYear();
+        const mes = String(fecha.getMonth() + 1).padStart(2, '0'); // Los meses comienzan desde 0
+        const dia = String(fecha.getDate()).padStart(2, '0');
+        return anio + '-' + mes + '-' + dia;
+    }
     var base = "<?php echo $url; ?>";
     var fecha;
     var calendar;
@@ -151,15 +157,32 @@ include('../layout/superior.php');
             events: {
                 url: base + "/app/controllers/citas/listar.php",
             },
-
             dateClick: function (info) {
+
                 frm.reset();
                 fecha = info.dateStr;
-                fecha_pasada = info.date;
-                fecha_actual = new Date();
+
+                /obtenemos la fecha actual/
+
+                var fecha_actual = new Date();
+                var fecha_actual_formateada = formatearFecha(fecha_actual);
+
+                /obtenemos la fecha seleccionada/
+
+
+                var fecha_seleccionada_str = info.dateStr;
+                var fecha_seleccionada = new Date(fecha_seleccionada_str);
+                fecha_seleccionada.setDate(fecha_seleccionada.getDate() + 1);
+                var fecha_seleccionada_formateada = formatearFecha(fecha_seleccionada);
+
                 const fechaCadena = fecha;
                 var numerosDias = new Date(fechaCadena).getDay();
                 var dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
+
+                /informamos la salida de las fechas formateadas para comparar/
+                console.log("fecha seleccionada :" + fecha_seleccionada_formateada);
+                console.log("fecha actual : " + fecha_actual_formateada);
+
 
 
                 if (numerosDias == "6") {
@@ -169,7 +192,7 @@ include('../layout/superior.php');
                         icon: "warning"
                     });
                 } else {
-                    if (fecha_pasada >= fecha_actual) {
+                    if (fecha_seleccionada_formateada >= fecha_actual_formateada) {
                         $("#hora_fecha").val(converterData(fecha));
                         document.getElementById("btn_add").classList.remove('d-none');
                         document.getElementById("btn_edit").classList.add('d-none');
@@ -339,7 +362,6 @@ include('../layout/superior.php');
         });
 
     });
-
 
 
     function converterData(data) {

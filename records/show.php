@@ -4,13 +4,17 @@ include('../layout/sessiones.php');
 include('../app/controllers/record/showDatas.php');
 include('../layout/superior.php');
 ?>
-
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Datos del Record</h1>
+            <div class="row mb-1">
+                <div class="col-md-18">
+                    <h1 class="m-0">Datos del Record
+                    <a href="<?php echo $url;?>/pdf/autoQuirurgica.php" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-info btn-sm" id="imprimir">Imprimir
+                        <i class="fa-solid fa-print"></i>
+                </a>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -40,7 +44,7 @@ include('../layout/superior.php');
                                     <div class="row ">
                                         <div class="form-group col-md-2">
                                            <label for="">Codigo</label>
-                                            <input type="text" class="form-control"
+                                            <input type="text" id="codigo" class="form-control"
                                                 value="<?php echo $codigo_rd; ?>" disabled>
                                         </div>
                                         <div class="form-group col-md-3">
@@ -163,22 +167,22 @@ include('../layout/superior.php');
 
                                 </div>
                                 <!-- /.card-body -->
-
-                                <div class="form-group">
+                                <div class="form-group col-sm-3">
                                     <a href="listar.php" class="btn btn-secondary">Volver</a>
                                 </div>
                             </form>
 
                         </div>
-                        <!-- /.card-body -->
                     </div>
                 </div>
             </div>
-            <!-- /.content -->
         </div>
     </div>
 </div>
-
-<!-- /.content-wrapper -->
 <?php include('../layout/mensajes.php'); ?>
 <?php include('../layout/inferior.php'); ?>
+
+<!--script para imprir reportes-->
+
+
+<div id="respuesta"></div>

@@ -2,7 +2,7 @@
 
 $id_record_get = $_GET['id'];
 
-$sql = "select * ,us.nombres,p.nombres_paciente
+$sql = "select * ,us.nombres,p.nombres_paciente,p.direccion,p.cedula,p.tel
         from tb_signosVitales as sv
         inner join tb_usuarios as us on sv.id_usuario=us.id_usuario
         inner join tb_paciente as p on sv.id_paciente=p.id_paciente 
@@ -16,9 +16,12 @@ $query->execute();
 $records_datos = $query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($records_datos as $datos) {
-    
+    $id_paciente = $datos['id_$id_paciente'];
     $codigo_rd = $datos['codigo_rd'];
     $nombre_paciente = $datos['nombres_paciente'];
+    $dire=$datos['direccion'];
+    $cedula=$datos['cedula'];
+    $tel=$datos['tel'];
     $ta = $datos['tension_arterial'];
     $fc = $datos['frecuencia_cardiaca'];
     $tp = $datos['temp_corporal'];
@@ -36,10 +39,6 @@ foreach ($records_datos as $datos) {
     $tipo_sangre = $datos['tipo_sangre'];
     $fech_ingreso = $datos['fech_ingreso'];
     $ultima_visita=$datos['ultima_visita'];
-
-
-    echo "<script>console.log('".$fech_ingreso."');</script>";
-
 
 
 }
